@@ -1,26 +1,31 @@
-import React, { PropsWithChildren, ReactNode, useRef } from 'react';
-import { findDOMNode } from 'react-dom';
-import { Tabs } from '@arco-design/web-react';
-import {Tooltip,Message,Button} from '@dekopon/design'
-import { IconCopy, IconCodepen, IconCodeSandbox, IconCode } from '@arco-design/web-react/icon';
-import ClipboardJS from 'clipboard';
-import { getParameters } from 'codesandbox/lib/api/define';
-import Css from './css';
-import Short from './short';
+import React, { PropsWithChildren, ReactNode, useRef } from "react";
+import { findDOMNode } from "react-dom";
+import { Tabs } from "@arco-design/web-react";
+import { Tooltip, Message, Button } from "@dekopon/design";
+import {
+  IconCopy,
+  IconCodepen,
+  IconCodeSandbox,
+  IconCode,
+} from "@arco-design/web-react/icon";
+import ClipboardJS from "clipboard";
+import { getParameters } from "codesandbox/lib/api/define";
+import Css from "./css";
+import Short from "./short";
 
 // CodePen
 const HTML =
   (window as any).CODEPEN_HTML ||
   '<div id="root" style="padding: 20px;"></div>\n<script>\nconst CONTAINER = document.getElementById("root")\n</script>';
 const CSS_EXTERNAL = (window as any).CODEPEN_CSS_EXTERNAL || [
-  'https://unpkg.com/@arco-design/web-react/dist/css/arco.css',
+  "https://unpkg.com/@arco-design/web-react/dist/css/arco.css",
 ];
 const JS_EXTERNAL = (window as any).CODEPEN_JS_EXTERNAL || [
-  'https://unpkg.com/react@16.x/umd/react.development.js',
-  'https://unpkg.com/react-dom@16.x/umd/react-dom.development.js',
-  'https://unpkg.com/dayjs@1.x/dayjs.min.js',
-  'https://unpkg.com@arco-design/web-react/dist/arco.min.js',
-  'https://unpkg.com@arco-design/web-react/dist/arco-icon.min.js',
+  "https://unpkg.com/react@16.x/umd/react.development.js",
+  "https://unpkg.com/react-dom@16.x/umd/react-dom.development.js",
+  "https://unpkg.com/dayjs@1.x/dayjs.min.js",
+  "https://unpkg.com@arco-design/web-react/dist/arco.min.js",
+  "https://unpkg.com@arco-design/web-react/dist/arco-icon.min.js",
 ];
 
 // CodeSandBox
@@ -33,39 +38,46 @@ interface CellCodeProps {
 
 interface CellCodeState {
   showAll: boolean;
-  codeType: 'jsx' | 'tsx';
+  codeType: "jsx" | "tsx";
 }
 
-const CODE_JSX = 'jsx';
-const CODE_TSX = 'tsx';
+const CODE_JSX = "jsx";
+const CODE_TSX = "tsx";
 
 const locales = {
-  'zh-CN': {
-    copy: '复制',
-    copied: '复制成功',
-    expand: '展开代码',
-    collapse: '收起代码',
-    codePen: '在 CodePen 打开',
-    codeSandbox: '在 CodeSandBox 打开',
+  "zh-CN": {
+    copy: "复制",
+    copied: "复制成功",
+    expand: "展开代码",
+    collapse: "收起代码",
+    codePen: "在 CodePen 打开",
+    codeSandbox: "在 CodeSandBox 打开",
   },
-  'en-US': {
-    copy: 'Copy',
-    copied: 'Copied Success!',
-    expand: 'Expand Code',
-    collapse: 'Collapse Code',
-    codePen: 'Open in CodePen',
-    codeSandbox: 'Open in CodeSandBox',
+  "en-US": {
+    copy: "Copy",
+    copied: "Copied Success!",
+    expand: "Expand Code",
+    collapse: "Collapse Code",
+    codePen: "Open in CodePen",
+    codeSandbox: "Open in CodeSandBox",
   },
 };
 
-class CellCode extends React.Component<PropsWithChildren<CellCodeProps>, CellCodeState> {
+class CellCode extends React.Component<
+  PropsWithChildren<CellCodeProps>,
+  CellCodeState
+> {
   private btnCopy = null;
 
   private codeEle = null;
 
-  private lang = localStorage.getItem('arco-lang') || 'zh-CN';
+  private lang = localStorage.getItem("arco-lang") || "zh-CN";
 
-  constructor(props: React.PropsWithChildren<CellCodeProps> | Readonly<React.PropsWithChildren<CellCodeProps>>) {
+  constructor(
+    props:
+      | React.PropsWithChildren<CellCodeProps>
+      | Readonly<React.PropsWithChildren<CellCodeProps>>
+  ) {
     super(props);
     this.state = {
       showAll: false,
@@ -74,58 +86,73 @@ class CellCode extends React.Component<PropsWithChildren<CellCodeProps>, CellCod
   }
 
   componentDidMount() {
-    const t = locales['zh-CN'];
+    const t = locales["zh-CN"];
     const clipboard = new ClipboardJS(findDOMNode(this.btnCopy) as Element, {
       text: () => {
-        return ((this.codeEle as any as HTMLElement).querySelector('.language-js') as HTMLElement).innerText;
+        return (
+          (this.codeEle as any as HTMLElement).querySelector(
+            ".language-js"
+          ) as HTMLElement
+        ).innerText;
       },
     });
-    clipboard.on('success', (e) => {
+    clipboard.on("success", (e) => {
       e.clearSelection();
       Message.success(t.copied);
     });
   }
 
   gotoCodepen = () => {
-    const codeEle: HTMLElement = (findDOMNode(this) as HTMLElement).querySelector('.language-js') as HTMLElement;
+    const codeEle: HTMLElement = (
+      findDOMNode(this) as HTMLElement
+    ).querySelector(".language-js") as HTMLElement;
     const code = codeEle.innerText;
     // codepen
     const postCode = code
-      .replace(/import ([.\s\S]*?) from '([.\s\S]*?)'/g, 'const $1 = window.$2')
-      .replace(/@arco-design\/web-react/g, 'arco')
-      .replace('arco/icon', 'arcoicon')
-      .replace(/react-dom/, 'ReactDOM')
-      .replace(/react/, 'React')
-      .replace(/export default ([.\s\S]*?)(;|$)/, 'ReactDOM.render(<$1 />, CONTAINER)');
+      .replace(/import ([.\s\S]*?) from '([.\s\S]*?)'/g, "const $1 = window.$2")
+      .replace(/@arco-design\/web-react/g, "arco")
+      .replace("arco/icon", "arcoicon")
+      .replace(/react-dom/, "ReactDOM")
+      .replace(/react/, "React")
+      .replace(
+        /export default ([.\s\S]*?)(;|$)/,
+        "ReactDOM.render(<$1 />, CONTAINER)"
+      );
     this.post(postCode);
   };
 
-  getData = (code:string) => {
+  getData = (code: string) => {
     return {
-      title: 'Cool Pen',
+      title: "Cool Pen",
       html: HTML,
       js: code,
-      css: this.props.cssCode || '',
-      js_pre_processor: 'typescript',
-      css_external: CSS_EXTERNAL.join(';'),
-      js_external: JS_EXTERNAL.join(';'),
-      editors: '001',
+      css: this.props.cssCode || "",
+      js_pre_processor: "typescript",
+      css_external: CSS_EXTERNAL.join(";"),
+      js_external: JS_EXTERNAL.join(";"),
+      editors: "001",
     };
   };
 
-  post = (code:any, codesandbox?: {url?: string; parameters:any; name?: string }) => {
-    const form = document.createElement('form');
-    form.action = (codesandbox && codesandbox.url) || 'https://codepen.io/pen/define';
-    form.target = '_blank';
-    form.method = 'POST';
-    form.style.display = 'none';
-    const field = document.createElement('input');
-    field.name = (codesandbox && codesandbox.name) || 'data';
-    field.type = 'hidden';
+  post = (
+    code: any,
+    codesandbox?: { url?: string; parameters: any; name?: string }
+  ) => {
+    const form = document.createElement("form");
+    form.action =
+      (codesandbox && codesandbox.url) || "https://codepen.io/pen/define";
+    form.target = "_blank";
+    form.method = "POST";
+    form.style.display = "none";
+    const field = document.createElement("input");
+    field.name = (codesandbox && codesandbox.name) || "data";
+    field.type = "hidden";
     field.setAttribute(
-      'value',
+      "value",
       (codesandbox && codesandbox.parameters) ||
-        JSON.stringify(this.getData(code)).replace(/"/g, '&quot;').replace(/'/g, '&apos;')
+        JSON.stringify(this.getData(code))
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&apos;")
     );
     form.appendChild(field);
     document.body.appendChild(form);
@@ -141,7 +168,7 @@ class CellCode extends React.Component<PropsWithChildren<CellCodeProps>, CellCod
     });
   };
 
-  toggleCode = (e:any) => {
+  toggleCode = (e: any) => {
     // 修正点击展开按钮时，页面向上滚动而不是向下滚动的问题
     if (!this.state.showAll) {
       e.target.blur();
@@ -152,22 +179,24 @@ class CellCode extends React.Component<PropsWithChildren<CellCodeProps>, CellCod
   };
 
   gotoCodeSandBox = () => {
-    const codeEle: HTMLElement = (findDOMNode(this) as HTMLElement).querySelector('.language-js')!;
+    const codeEle: HTMLElement = (
+      findDOMNode(this) as HTMLElement
+    ).querySelector(".language-js")!;
     const codePrefix = `import '@arco-design/web-react/dist/css/arco.css';
-${this.props.cssCode ? `import './index.css';\n` : ''}`;
+${this.props.cssCode ? `import './index.css';\n` : ""}`;
 
     const code = `${codePrefix}\n${codeEle.innerText}`;
-    const scriptType = this.state.codeType === CODE_TSX ? 'tsx' : 'js';
+    const scriptType = this.state.codeType === CODE_TSX ? "tsx" : "js";
 
     const sandBoxConfig = {
       files: {
-        'package.json': {
+        "package.json": {
           isBinary: false,
           content: JSON.stringify({
             dependencies: {
-              react: '17',
-              'react-dom': '17',
-              '@arco-design/web-react': 'latest',
+              react: "17",
+              "react-dom": "17",
+              "@arco-design/web-react": "latest",
             },
           }),
         },
@@ -182,9 +211,9 @@ ${this.props.cssCode ? `import './index.css';\n` : ''}`;
             `import ReactDOM from 'react-dom'`,
             `import Demo from './demo'`,
             `ReactDOM.render(<Demo />, document.getElementById('root'))`,
-          ].join('\n'),
+          ].join("\n"),
         },
-        'index.html': {
+        "index.html": {
           isBinary: false,
           content: html,
         },
@@ -192,7 +221,7 @@ ${this.props.cssCode ? `import './index.css';\n` : ''}`;
     };
 
     if (this.props.cssCode) {
-      sandBoxConfig.files['index.css'] = {
+      sandBoxConfig.files["index.css"] = {
         isBinary: false,
         content: this.props.cssCode,
       };
@@ -200,15 +229,17 @@ ${this.props.cssCode ? `import './index.css';\n` : ''}`;
     // to specific demo file
     const query = `file=/demo.${scriptType}`;
     this.post(undefined, {
-      url: `https://codesandbox.io/api/v1/sandboxes/define?query=${encodeURIComponent(query)}`,
+      url: `https://codesandbox.io/api/v1/sandboxes/define?query=${encodeURIComponent(
+        query
+      )}`,
       parameters: getParameters(sandBoxConfig),
-      name: 'parameters',
+      name: "parameters",
     });
   };
 
   renderOperations = () => {
     const { showAll, codeType } = this.state;
-    const t = locales['zh-CN'];
+    const t = locales["zh-CN"];
 
     return (
       <div className="arco-code-operations">
@@ -219,34 +250,41 @@ ${this.props.cssCode ? `import './index.css';\n` : ''}`;
             type="capsule"
             activeTab={codeType}
             onChange={this.toggleCodeType}
-            className={`code-type-switch ${showAll ? 'show-all' : ''}`}
+            className={`code-type-switch ${showAll ? "show-all" : ""}`}
           >
             <Tabs.TabPane key={CODE_JSX} title="JS" />
             <Tabs.TabPane key={CODE_TSX} title="TS" />
           </Tabs>
         )}
-        <Tooltip content={'showAll ? t.collapse : t.expand'}>
-          <Button
-            size="small"
-            onClick={this.toggleCode}
-            type="secondary"
-            aria-label={t.collapse}
-            className={showAll ? 'ac-btn-expanded' : ''}
-          >
-            <IconCode />
-          </Button>
+        <Tooltip id={"code"} content={showAll ? t.collapse : t.expand}>
+          <span>
+            {" "}
+            <Button
+              aria-describedby={"code"}
+              size="small"
+              onClick={this.toggleCode}
+              type="secondary"
+              aria-label={t.collapse}
+              className={showAll ? "ac-btn-expanded" : ""}
+            >
+              <IconCode />
+            </Button>
+          </span>
         </Tooltip>
         <Tooltip content={t.copy}>
-          <Button
-            size="small"
-            ref={(ref:any) => (this.btnCopy = ref)}
-            type="secondary"
-            aria-label={t.copy}
-          >
-            <IconCopy className="copy-icon" />
-          </Button>
+          <span>
+            <Button
+              size="small"
+              ref={(ref: any) => (this.btnCopy = ref)}
+              type="secondary"
+              aria-label={t.copy}
+            >
+              <IconCopy className="copy-icon" />
+            </Button>
+          </span>
         </Tooltip>
-          <Tooltip content={t.codePen}>
+        <Tooltip content={t.codePen}>
+          <span>
             <Button
               size="small"
               onClick={this.gotoCodepen}
@@ -255,16 +293,19 @@ ${this.props.cssCode ? `import './index.css';\n` : ''}`;
             >
               <IconCodepen />
             </Button>
-          </Tooltip>
+          </span>
+        </Tooltip>
         <Tooltip content={t.codeSandbox}>
-          <Button
-            size="small"
-            onClick={this.gotoCodeSandBox}
-            type="secondary"
-            aria-label={t.codeSandbox}
-          >
-            <IconCodeSandbox />
-          </Button>
+          <span>
+            <Button
+              size="small"
+              onClick={this.gotoCodeSandBox}
+              type="secondary"
+              aria-label={t.codeSandbox}
+            >
+              <IconCodeSandbox />
+            </Button>
+          </span>
         </Tooltip>
       </div>
     );
@@ -276,8 +317,8 @@ ${this.props.cssCode ? `import './index.css';\n` : ''}`;
     return (
       <div className="arco-code-wrapper">
         {this.renderOperations()}
-        <div className={`content-code-design ${showAll ? 'show-all' : ''}`}>
-          <div className="code" ref={(ref:any) => (this.codeEle = ref)}>
+        <div className={`content-code-design ${showAll ? "show-all" : ""}`}>
+          <div className="code" ref={(ref: any) => (this.codeEle = ref)}>
             {codeType === CODE_TSX ? props.tsx : props.children}
           </div>
         </div>
