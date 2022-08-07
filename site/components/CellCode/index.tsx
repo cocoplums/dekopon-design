@@ -1,7 +1,7 @@
-import React, { PropsWithChildren, ReactNode } from 'react';
+import React, { PropsWithChildren, ReactNode, useRef } from 'react';
 import { findDOMNode } from 'react-dom';
-import { Button, Tabs } from '@arco-design/web-react';
-import {Tooltip,Message} from '@dekopon/design'
+import { Tabs } from '@arco-design/web-react';
+import {Tooltip,Message,Button} from '@dekopon/design'
 import { IconCopy, IconCodepen, IconCodeSandbox, IconCode } from '@arco-design/web-react/icon';
 import ClipboardJS from 'clipboard';
 import { getParameters } from 'codesandbox/lib/api/define';
@@ -229,7 +229,6 @@ ${this.props.cssCode ? `import './index.css';\n` : ''}`;
         <Tooltip content={showAll ? t.collapse : t.expand}>
           <Button
             size="small"
-            shape="circle"
             onClick={this.toggleCode}
             type="secondary"
             aria-label={t.collapse}
@@ -241,7 +240,6 @@ ${this.props.cssCode ? `import './index.css';\n` : ''}`;
         <Tooltip content={t.copy}>
           <Button
             size="small"
-            shape="circle"
             ref={(ref:any) => (this.btnCopy = ref)}
             type="secondary"
             aria-label={t.copy}
@@ -253,7 +251,6 @@ ${this.props.cssCode ? `import './index.css';\n` : ''}`;
           <Tooltip content={t.codePen}>
             <Button
               size="small"
-              shape="circle"
               onClick={this.gotoCodepen}
               type="secondary"
               aria-label={t.codePen}
@@ -265,7 +262,6 @@ ${this.props.cssCode ? `import './index.css';\n` : ''}`;
         <Tooltip content={t.codeSandbox}>
           <Button
             size="small"
-            shape="circle"
             onClick={this.gotoCodeSandBox}
             type="secondary"
             aria-label={t.codeSandbox}

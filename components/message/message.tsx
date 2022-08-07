@@ -1,7 +1,9 @@
 import {toast, ToastContainer} from "react-toastify";
 import React from "react";
-import ReactDOM from "react-dom";
-let ins:HTMLDivElement|null=null;
+import {createRoot, Root} from "react-dom/client";
+
+let ins: HTMLDivElement | null = null;
+let root: Root;
 type MessageType={
     success:(message:string)=>void;
     info:(message:string)=>void;
@@ -14,11 +16,12 @@ MessageType.forEach((type)=>{
     // @ts-ignore
     Message[type]=function (message:string) {
         if(ins){
-            ReactDOM.render(<ToastContainer/>,ins)
+            root.render(<ToastContainer/>)
         }else {
             ins = document.createElement("div");
             document.body.appendChild(ins);
-            ReactDOM.render(<ToastContainer/>,ins)
+            root = createRoot(ins);
+            root.render(<ToastContainer/>)
         }
         // @ts-ignore
         toast[type](message);

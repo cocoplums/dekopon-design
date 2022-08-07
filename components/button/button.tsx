@@ -5,7 +5,7 @@ interface ButtonProps {
   children: React.ReactNode;
   className?: string;
   type?:  'primary' | 'text' | 'secondary';
-  size?: 'default' | 'primary' | 'mini';
+  size?: 'default' | 'primary' | 'mini'|'small';
   onClick?: (event: React.MouseEvent) => void;
 }
 
@@ -15,9 +15,10 @@ const Button = ({
   size = 'default',
   className,
   onClick,
-}: ButtonProps) => {
+}: ButtonProps,ref: React.LegacyRef<HTMLButtonElement> | undefined) => {
   return (
     <button
+        ref={ref}
       onClick={onClick}
       className={classNames('zzf-btn', `zzf-btn-type-${type}`, `zzf-btn-size-${size}`, className)}
     >
@@ -26,4 +27,4 @@ const Button = ({
   );
 };
 
-export default Button;
+export default React.forwardRef(Button);
