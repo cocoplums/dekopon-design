@@ -9,7 +9,6 @@ import Css from './css';
 import Short from './short';
 
 // CodePen
-const CODEPEN_ENABLE = (window as any).CODEPEN_ENABLE;
 const HTML =
   (window as any).CODEPEN_HTML ||
   '<div id="root" style="padding: 20px;"></div>\n<script>\nconst CONTAINER = document.getElementById("root")\n</script>';
@@ -226,7 +225,7 @@ ${this.props.cssCode ? `import './index.css';\n` : ''}`;
             <Tabs.TabPane key={CODE_TSX} title="TS" />
           </Tabs>
         )}
-        <Tooltip content={showAll ? t.collapse : t.expand}>
+        <Tooltip content={'showAll ? t.collapse : t.expand'}>
           <Button
             size="small"
             onClick={this.toggleCode}
@@ -247,7 +246,6 @@ ${this.props.cssCode ? `import './index.css';\n` : ''}`;
             <IconCopy className="copy-icon" />
           </Button>
         </Tooltip>
-        {CODEPEN_ENABLE ? (
           <Tooltip content={t.codePen}>
             <Button
               size="small"
@@ -258,7 +256,6 @@ ${this.props.cssCode ? `import './index.css';\n` : ''}`;
               <IconCodepen />
             </Button>
           </Tooltip>
-        ) : null}
         <Tooltip content={t.codeSandbox}>
           <Button
             size="small"
