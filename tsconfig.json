@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "esnext",
+    "allowJs": true,
+    "jsx": "react",
+    "declaration": true,
+    "declarationDir": "lib",
+    "outDir": "lib",
+    "emitDeclarationOnly": false,
+    "downlevelIteration": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "@dekopon/design": ["lib/components/index.js"],
+//      "@dekopon/design": ["components/index.ts"],
+      "components": ["components/*"]
+    },
+    "typeRoots": ["./node_modules/@types/", "./typings"],
+    "types": ["node", "webpack-env","jest"],
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["dom", "dom.iterable", "esnext"]
+  },
+  "include": [
+    "doc/**/*",
+    "components/**/*", "typings/**/*","lib/**/*"],
+  "exclude": ["test", "node_modules",
+    "components/styles/*",
+    "components/**/style/*",
+    "components/**/__test__/*",
+  ]
+}

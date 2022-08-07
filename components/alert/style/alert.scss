@@ -1,0 +1,18 @@
+.zzf-alert {
+  color: var(--color-text-1);
+  padding: 8px 15px;
+  border-radius: var(--border-radius-small);
+  font-size:14px;
+  &-info {
+    background-color: var(--color-primary-1);
+  }
+  &-success {
+    background-color: var(--color-success-1);
+  }
+  &-warning {
+    background-color: var(--color-warning-1);
+  }
+  &-error {
+    background-color: var(--color-danger-1);
+  }
+}
