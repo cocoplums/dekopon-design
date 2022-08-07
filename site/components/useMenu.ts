@@ -7,7 +7,6 @@ const useMenu = () => {
     const components = files
       .keys()
       .map((item) => {
-        console.log(item)
         return {
           path: item.replace("./", "").replace("/index.zh-CN.md", ""),
           component: files(item).default,

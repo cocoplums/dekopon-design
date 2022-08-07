@@ -3,7 +3,6 @@ import { createElement } from "react";
 import CommonLayout from "./components/CommonLayout";
 import useMenu from "./components/useMenu";
 import React from 'react';
-
 function App(): JSX.Element {
   const list = useMenu();
   return (

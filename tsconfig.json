@@ -15,8 +15,8 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "@dekopon/design": ["lib/components/index.js"],
-//      "@dekopon/design": ["components/index.ts"],
+      "@dekopon/site": ["site/components/*"],
+      "@dekopon/design": ["components/index.ts"],
       "components": ["components/*"]
     },
     "typeRoots": ["./node_modules/@types/", "./typings"],
@@ -27,10 +27,10 @@
     "forceConsistentCasingInFileNames": true,
     "lib": ["dom", "dom.iterable", "esnext"]
   },
-  "include": [
-    "doc/**/*",
-    "components/**/*", "typings/**/*","lib/**/*"],
-  "exclude": ["test", "node_modules",
+  "include": ["components/**/*","site/**/*","typings"],
+  "exclude": [
+    "test",
+    "node_modules",
     "components/styles/*",
     "components/**/style/*",
     "components/**/__test__/*",

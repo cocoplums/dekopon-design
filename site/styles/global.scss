@@ -1,6 +1,5 @@
 @import "reset.css";
-@import "../../dist/theme";
-@import "../../dist/bundle.min.css";
+@import "../../components/styles/theme";
 
 :root,
 [data-color-mode="light"] {

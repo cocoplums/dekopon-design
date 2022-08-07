@@ -6,7 +6,7 @@ const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 const isDevelopment = process.env.NODE_ENV === "development";
 
 module.exports = {
-  entry: path.resolve(__dirname, "../doc/index.tsx"),
+  entry: path.resolve(__dirname, "../site/index.tsx"),
   cache: {
     type: "filesystem",
     buildDependencies: {
@@ -97,14 +97,14 @@ module.exports = {
             loader: "babel-loader",
           },
           {
-            loader: "@dekopon/cli",
+            loader: require.resolve("@dekopon/cli"),
             options: {
               demoDir: "__demo__",
               babelConfig: {
                 filename: "",
                 presets: ['@babel/preset-env', '@babel/preset-typescript', '@babel/preset-react'],
                 plugins: [
-                  // '@babel/plugin-proposal-export-default-from',
+                  '@babel/plugin-proposal-export-default-from',
                   // '@babel/plugin-transform-runtime',
                   // '@babel/plugin-syntax-dynamic-import',
                   // '@babel/plugin-proposal-class-properties',
@@ -123,7 +123,7 @@ module.exports = {
       path: `./.env.${process.env.NODE_ENV}`,
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "../doc/public/index.html"),
+      template: path.resolve(__dirname, "../site/public/index.html"),
     }),
   ].filter(Boolean),
   resolve: {

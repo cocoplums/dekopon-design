@@ -1,0 +1,189 @@
+.dekopon.dekopon-zoom-appear,
+.dekopon.dekopon-zoom-enter {
+  opacity: 0;
+}
+.dekopon.dekopon-zoom-enter,
+.dekopon.dekopon-zoom-leave {
+  display: block;
+}
+.dekopon-zoom-enter,
+.dekopon-zoom-appear {
+  opacity: 0;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  animation-play-state: paused;
+}
+.dekopon-zoom-leave {
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.6, -0.3, 0.74, 0.05);
+  animation-play-state: paused;
+}
+.dekopon-zoom-enter.dekopon-zoom-enter-active,
+.dekopon-zoom-appear.dekopon-zoom-appear-active {
+  animation-name: rcToolTipZoomIn;
+  animation-play-state: running;
+}
+.dekopon-zoom-leave.dekopon-zoom-leave-active {
+  animation-name: rcToolTipZoomOut;
+  animation-play-state: running;
+}
+@keyframes rcToolTipZoomIn {
+  0% {
+    opacity: 0;
+    transform-origin: 50% 50%;
+    transform: scale(0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform-origin: 50% 50%;
+    transform: scale(1, 1);
+  }
+}
+@keyframes rcToolTipZoomOut {
+  0% {
+    opacity: 1;
+    transform-origin: 50% 50%;
+    transform: scale(1, 1);
+  }
+  100% {
+    opacity: 0;
+    transform-origin: 50% 50%;
+    transform: scale(0, 0);
+  }
+}
+.dekopon {
+  position: absolute;
+  z-index: 1070;
+  display: block;
+  visibility: visible;
+  line-height: 1.5;
+  font-size: 12px;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 1px;
+  opacity: 0.9;
+}
+.dekopon-hidden {
+  display: none;
+}
+.dekopon-inner {
+  padding: 8px 10px;
+  color: #333333;
+  text-align: left;
+  text-decoration: none;
+  background-color: #ffffff;
+  border-radius: 3px;
+  min-height: 34px;
+  border: 1px solid #b1b1b1;
+}
+.dekopon-arrow,
+.dekopon-arrow-inner {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.dekopon-placement-top .dekopon-arrow,
+.dekopon-placement-topLeft .dekopon-arrow,
+.dekopon-placement-topRight .dekopon-arrow {
+  bottom: -5px;
+  margin-left: -6px;
+  border-width: 6px 6px 0;
+  border-top-color: #b1b1b1;
+}
+.dekopon-placement-top .dekopon-arrow-inner,
+.dekopon-placement-topLeft .dekopon-arrow-inner,
+.dekopon-placement-topRight .dekopon-arrow-inner {
+  bottom: 1px;
+  margin-left: -6px;
+  border-width: 6px 6px 0;
+  border-top-color: #ffffff;
+}
+.dekopon-placement-top .dekopon-arrow {
+  left: 50%;
+}
+.dekopon-placement-topLeft .dekopon-arrow {
+  left: 15%;
+}
+.dekopon-placement-topRight .dekopon-arrow {
+  right: 15%;
+}
+.dekopon-placement-right .dekopon-arrow,
+.dekopon-placement-rightTop .dekopon-arrow,
+.dekopon-placement-rightBottom .dekopon-arrow {
+  left: -5px;
+  margin-top: -6px;
+  border-width: 6px 6px 6px 0;
+  border-right-color: #b1b1b1;
+}
+.dekopon-placement-right .dekopon-arrow-inner,
+.dekopon-placement-rightTop .dekopon-arrow-inner,
+.dekopon-placement-rightBottom .dekopon-arrow-inner {
+  left: 1px;
+  margin-top: -6px;
+  border-width: 6px 6px 6px 0;
+  border-right-color: #ffffff;
+}
+.dekopon-placement-right .dekopon-arrow {
+  top: 50%;
+}
+.dekopon-placement-rightTop .dekopon-arrow {
+  top: 15%;
+  margin-top: 0;
+}
+.dekopon-placement-rightBottom .dekopon-arrow {
+  bottom: 15%;
+}
+.dekopon-placement-left .dekopon-arrow,
+.dekopon-placement-leftTop .dekopon-arrow,
+.dekopon-placement-leftBottom .dekopon-arrow {
+  right: -5px;
+  margin-top: -6px;
+  border-width: 6px 0 6px 6px;
+  border-left-color: #b1b1b1;
+}
+.dekopon-placement-left .dekopon-arrow-inner,
+.dekopon-placement-leftTop .dekopon-arrow-inner,
+.dekopon-placement-leftBottom .dekopon-arrow-inner {
+  right: 1px;
+  margin-top: -6px;
+  border-width: 6px 0 6px 6px;
+  border-left-color: #ffffff;
+}
+.dekopon-placement-left .dekopon-arrow {
+  top: 50%;
+}
+.dekopon-placement-leftTop .dekopon-arrow {
+  top: 15%;
+  margin-top: 0;
+}
+.dekopon-placement-leftBottom .dekopon-arrow {
+  bottom: 15%;
+}
+.dekopon-placement-bottom .dekopon-arrow,
+.dekopon-placement-bottomLeft .dekopon-arrow,
+.dekopon-placement-bottomRight .dekopon-arrow {
+  top: -5px;
+  margin-left: -6px;
+  border-width: 0 6px 6px;
+  border-bottom-color: #b1b1b1;
+}
+.dekopon-placement-bottom .dekopon-arrow-inner,
+.dekopon-placement-bottomLeft .dekopon-arrow-inner,
+.dekopon-placement-bottomRight .dekopon-arrow-inner {
+  top: 1px;
+  margin-left: -6px;
+  border-width: 0 6px 6px;
+  border-bottom-color: #ffffff;
+}
+.dekopon-placement-bottom .dekopon-arrow {
+  left: 50%;
+}
+.dekopon-placement-bottomLeft .dekopon-arrow {
+  left: 15%;
+}
+.dekopon-placement-bottomRight .dekopon-arrow {
+  right: 15%;
+}
