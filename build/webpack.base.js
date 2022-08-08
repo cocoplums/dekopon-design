@@ -124,6 +124,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "../site/public/index.html"),
+      favicon: path.resolve(__dirname,'../site/public/favicon.ico')
     }),
   ].filter(Boolean),
   resolve: {
