@@ -14,13 +14,13 @@ title:
 Warning prompts. Suitable for displaying short warning prompts in a way that attracts attention.
 
 ```js
-import { Message,Button,Space } from '@dekopon/design';
+import { Message,Button } from '@dekopon/design';
 
 const App = () => {
-  return <Space>
+  return <>
   <Button onClick={()=>Message.success("success")}>success</Button>
   <Button onClick={()=>Message.info("info")}>info</Button>
-  </Space>
+  </>
 }
 
 export default App

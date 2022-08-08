@@ -1,0 +1,25 @@
+import React, { ReactNode } from 'react';
+import classNames from '../_util/classNames';
+
+interface CardProps {
+  children: React.ReactNode;
+  className?: string;
+  title?: ReactNode;
+}
+
+const Card = ({ children, title, className }:CardProps) => {
+  return (
+    <section className={classNames('zzf-card', className)}>
+      {title && (
+        <header className={classNames('zzf-card-header')}>
+          <span className={'zzf-card-header-text'}>{title}</span>
+        </header>
+      )}
+      <section className={'zzf-card-body'}>
+        {children}
+      </section>
+    </section>
+  );
+};
+
+export default Card;

@@ -3,3 +3,7 @@ import '../alert/style';
 import '../tooltip/style';
 import '../button/style';
 import '../layout/style';
+import '../space/style';
+import '../modal/style';
+import '../comment/style';
+import '../card/style';
