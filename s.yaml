@@ -8,7 +8,7 @@ services:
       pre-deploy:
         - run: pnpm i --frozen-lockfile
           path: ./
-        - run: pnpm run build
+        - run: pnpm run doc:build
           path: ./
         - plugin: website-fc
     props: # 组件的属性值
