@@ -17,7 +17,7 @@ services:
         name: web-service
         description: "Serverless Devs Website Service"
       function:
-        name: zeus
+        name: design
         description: "Serverless Devs Website Docusaurus Function"
         codeUri: ./dist
         timeout: 30
