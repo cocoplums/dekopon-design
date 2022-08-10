@@ -38,7 +38,19 @@ jobs:
       - run: s config add --AccessKeyID ${{secrets.AccessKeyID}} --AccessKeySecret ${{secrets.AccessKeySecret}} -a default -f
 
       - run: s deploy -y --use-local
-  test:
+  test1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "test"
+  test2:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "test"
+  test3:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "test"
+  test4:
     runs-on: ubuntu-latest
     steps:
       - run: echo "test"
