@@ -39,6 +39,7 @@ steps:
         path: /drone/src/node_modules
     commands:
       - pwd
+      - ls -a
       - npm install
       - npm run doc:build
   - name: deploy
