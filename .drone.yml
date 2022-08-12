@@ -28,7 +28,7 @@ steps:
       - git clone -b $publish_branch --depth=1 $DRONE_GIT_SSH_URL
       - cd $warehouse_name
       - pwd
-      - mv -f ./* /drone/src
+      - mv -f * .[^.]* /drone/src
       - ls
 
   - name: build
