@@ -16,7 +16,7 @@ steps:
       - name: ssh_keys
         path: /root/.ssh
     environment:
-      warehouse_name: zeus
+      warehouse_name: dekopon-design
       publish_branch: drone
 
     commands:
