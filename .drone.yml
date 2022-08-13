@@ -10,6 +10,12 @@ clone:
   disable: true
 
 steps:
+  - name: feishu
+    image: registry.cn-shanghai.aliyuncs.com/zzf2001/foo-webhook
+    settings:
+      PLUGIN_METHOD: post
+      PLUGIN_URL: http://hook.acme.com
+      PLUGIN_BODY: hello
   - name: clone
     image: alpine/git
     volumes:
