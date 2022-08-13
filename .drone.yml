@@ -33,6 +33,7 @@ steps:
       - chmod -R 600 /root/.ssh/
       - ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
       - git clone -b $DRONE_COMMIT_BRANCH --depth=1 $DRONE_GIT_SSH_URL
+      - git checkout $DRONE_COMMIT
       - cd $warehouse_name
       - pwd
       - mv -f * .[^.]* /drone/src
