@@ -13,9 +13,11 @@ steps:
   - name: feishu
     image: registry.cn-shanghai.aliyuncs.com/zzf2001/foo-webhook
     settings:
-      METHOD: post
-      URL: http://hook.acme.com
-      BODY: hello
+      webhook:
+        from_secret: webhook
+      secret:
+        from_secret: secret
+      text: hello
   - name: clone
     image: alpine/git
     volumes:
