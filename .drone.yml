@@ -40,7 +40,7 @@ steps:
       - ls
 
   - name: build
-    image: node
+    image: node:lts-alpine
     depends_on: [clone]
     volumes:
       - name: node_modules
