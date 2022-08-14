@@ -4,7 +4,8 @@ import Portal from '../common/Portal';
 import { Button } from '../button';
 import useOutsideClick from '../_hooks/useOutsideClick';
 import classNames from '../_util/classNames';
-import Close from '../icon/Close';
+import IconClose from '../../icon/react-icon/IconClose';
+
 type ModalType = {
   title?: string;
   children?: ReactNode;
@@ -22,7 +23,7 @@ const Modal = (props: ModalType) => {
         <div ref={ref} className={'zzf-modal-container'}>
           <header className={'zzf-modal-header'}>
             <div>{title}</div>
-            <Close className={'zzf-model-close'} onClick={onCancel} />
+            <IconClose className={'zzf-model-close'} onClick={onCancel} />
           </header>
           <div>{children}</div>
           <footer className={'zzf-modal-footer'}>

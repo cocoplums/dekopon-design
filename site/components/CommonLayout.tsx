@@ -27,6 +27,14 @@ const CommonLayout = () => {
       <Layout.Content className={styles.webContent}>
         <Layout.Left className={styles.aside}>
           <ul>
+              <li>
+                  <NavLink
+                      className={({ isActive }) => (isActive ? styles.active : '')}
+                      to={'/icon'}
+                  >
+                      icon
+                  </NavLink>
+              </li>
             {list.map((item) => (
               <li key={item.path}>
                 <NavLink
