@@ -12,7 +12,7 @@ const handler = (percentage, message, ...args) => {
 };
 module.exports = merge(base, {
   mode: "production",
-  devtool: false,
+  devtool: 'source-map',
   output: {
     publicPath: "https://oss-zzf.zzfzzf.com//dekopon/design",
   },
