@@ -1,6 +1,6 @@
 {
   "name": "@dekopon/design",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "不知火组件库",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,8 @@
     "doc:dev": "cross-env NODE_ENV=development webpack server --config build/webpack.dev.js",
     "doc:build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.js",
     "build": "cross-env NODE_ENV=production node build/esbuild&&tsc",
-    "minor": "standard-version --release-as minor"
+    "minor": "standard-version --release-as minor",
+    "patch": "standard-version"
   },
   "repository": {
     "type": "git",
