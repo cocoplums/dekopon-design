@@ -9,7 +9,7 @@ import {
   Select,
   InputNumber,
 } from '@arco-design/web-react';
-import * as icons from '@dekopon/design/icon';
+import * as icons from '../index.es';
 
 const RadioGroup = Radio.Group;
 
