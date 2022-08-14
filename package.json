@@ -4,6 +4,7 @@
   "description": "不知火组件库",
   "main": "index.js",
   "scripts": {
+    "lint": "exit 0",
     "icon": "cd icon && rimraf react-icon/ && rimraf react-icon-cjs && cd build/ && node generate.js && node genDemo.js",
     "doc:dev": "cross-env NODE_ENV=development webpack server --config build/webpack.dev.js",
     "doc:build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.js",
