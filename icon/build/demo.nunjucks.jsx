@@ -8,21 +8,12 @@ import {
   Slider,
   Select,
   InputNumber,
-  Button,
-  Modal,
-  Tooltip,
-  Typography,
 } from '@arco-design/web-react';
-import * as icons from '@arco-design/web-react/icon/index.es.js';
-import { teaLog } from '@arco-materials/site-utils';
-import { IconClassifyModal } from './classifyModal';
+import * as icons from '@dekopon/design/icon';
 
 const RadioGroup = Radio.Group;
-const { Paragraph } = Typography;
-const IconCamera = icons.IconCamera;
 
 const svgData = JSON.parse('{{ svgData | safe }}');
-const newIcons = JSON.parse('{{ newIcons | safe }}');
 
 const lineCaps = ['butt', 'round', 'square'];
 const lineJoins = ['arcs', 'bevel', 'miter', 'miter-clip', 'round'];
@@ -44,30 +35,8 @@ const locale = {
         单个组件的话可以直接将以上样式写到 <code>IconXXX</code> 的 <code>style</code> 中
       </span>
     ),
-    'show-config': '显示配置',
     add: '添加',
     iconClassifyModalTitle: '上传图片搜索图标',
-  },
-  'en-US': {
-    title: 'Icon Configuration',
-    line: 'Stroke',
-    fill: 'Fill',
-    color: 'Color',
-    search: 'Search icon, click to copy usage',
-    'stroke-width': 'Stroke Width:',
-    size: 'Size:',
-    lineJoin: 'Line Join:',
-    lineCap: 'Line Cap:',
-    desc1: 'Global configuration (add the following class to css):',
-    desc2: (
-      <span>
-        For a single component, you can directly write the above style to the <code>style</code>
-        of <code>IconXXX</code>
-      </span>
-    ),
-    'show-config': 'Show Config',
-    add: 'Add',
-    iconClassifyModalTitle: 'Upload an image to search for icons',
   },
 };
 
@@ -83,8 +52,6 @@ export default function ({ lang = 'zh-CN' }) {
   const getWidthStyle = (width) => ({ width });
   const iconStyle = { fontSize };
   const spaceStyle = { justifyContent: 'space-between', whiteSpace: 'nowrap' };
-  const iconCameraStyle = { marginLeft: 8 };
-  const [iconClassifyModalVisible, setIconClassifyModalVisible] = useState(false);
 
   const maps = JSON.parse('{{ maps | safe }}')[lang];
 
@@ -106,23 +73,6 @@ export default function ({ lang = 'zh-CN' }) {
           <Radio value="color">{t.color}</Radio>
         </RadioGroup>
         <Input.Search size="large" onChange={setFilter} placeholder={t.search} />
-        <Tooltip content={t.iconClassifyModalTitle}>
-          <Button
-            size="large"
-            icon={<IconCamera />}
-            style={iconCameraStyle}
-            onClick={() => {
-              teaLog('search_icon_by_img', { type: 'open' });
-              setIconClassifyModalVisible(true);
-            }}
-          />
-          <IconClassifyModal
-            title={t.iconClassifyModalTitle}
-            lang={lang}
-            visible={iconClassifyModalVisible}
-            onVisibleChange={setIconClassifyModalVisible}
-          />
-        </Tooltip>
       </div>
       <Affix offsetTop={60} className="iconlist-affix">
         <Space className="iconlist-operations" style={spaceStyle}>
@@ -159,28 +109,6 @@ export default function ({ lang = 'zh-CN' }) {
               style={getWidthStyle(84)}
             />
           </Space>
-          <Button
-            type="primary"
-            onClick={() =>
-              Modal.success({
-                title: t.title,
-                content: (
-                  <div>
-                    <Paragraph>{t.desc1} </Paragraph>
-                    <Paragraph code>{`.arco-icon {
-                      font-size: ${fontSize};
-                      ${lineCap !== 'butt' ? `stroke-linecap: ${lineCap};` : ''}
-                      ${lineJoin !== 'miter' ? `stroke-linejoin: ${lineJoin};` : ''}
-                      ${strokeWidth !== 4 ? `stroke-width: ${strokeWidth};` : ''}
-                    }`}</Paragraph>
-                    <Paragraph>{t.desc2}</Paragraph>
-                  </div>
-                ),
-              })
-            }
-          >
-            {t['show-config']}
-          </Button>
         </Space>
       </Affix>
       {Object.keys(svgData).map((key) => {
@@ -202,7 +130,6 @@ export default function ({ lang = 'zh-CN' }) {
             <ul className="iconlist">
               {filteredData.map((n) => {
                 const Tag = icons[n.componentName];
-                const newIcon = newIcons.find((_n) => _n.name === n.componentName);
                 return (
                   <li key={n.componentName} className="icon-cell" aria-label={n.componentName}>
                     <div className="icon-show">
@@ -214,11 +141,6 @@ export default function ({ lang = 'zh-CN' }) {
                       />
                     </div>
                     <p className="name">{n.componentName}</p>
-                    {newIcon ? (
-                      <span className="version">
-                        {newIcon.version} {t.add}
-                      </span>
-                    ) : null}
                   </li>
                 );
               })}

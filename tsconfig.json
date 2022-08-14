@@ -17,6 +17,7 @@
     "paths": {
       "@dekopon/site": ["site/components/*"],
       "@dekopon/design": ["components/index.ts"],
+      "@dekopon/design/icon": ["icon/index.es.js"],
       "components": ["components/*"]
     },
     "typeRoots": ["./node_modules/@types/", "./typings"],
