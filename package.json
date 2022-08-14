@@ -4,6 +4,7 @@
   "description": "不知火组件库",
   "main": "index.js",
   "scripts": {
+    "clean": "zx bin/clean.mjs",
     "lint": "exit 0",
     "icon": "cd icon && rimraf react-icon/ && rimraf react-icon-cjs && cd build/ && node generate.js && node genDemo.js",
     "doc:dev": "cross-env NODE_ENV=development webpack server --config build/webpack.dev.js",
@@ -91,6 +92,7 @@
   "dependencies": {
     "rc-notification": "5.0.0-alpha.9",
     "rc-tooltip": "^5.2.2",
-    "react-toastify": "^9.0.8"
+    "react-toastify": "^9.0.8",
+    "zx": "^7.0.8"
   }
 }
