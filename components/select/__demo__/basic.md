@@ -15,9 +15,11 @@ Warning prompts. Suitable for displaying short warning prompts in a way that att
 
 ```js
 import { Select } from '@dekopon/design';
-
+const {Option}=Select
 const App = () => {
-  return <Select content="This is tooltip content"><span>Mouse over to display tooltip</span></Select>
+  return <Select content="This is tooltip content">
+    <Option>123</Option>
+  </Select>
 }
 
 export default App

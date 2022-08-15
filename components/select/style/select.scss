@@ -1,0 +1,14 @@
+.rc-virtual-list-holder-inner{
+  top: 4px;
+  box-sizing: border-box;
+  padding: 4px 0;
+  border: 1px solid var(--color-fill-3);
+  border-radius: var(--border-radius-medium);
+  background-color: var(--color-bg-popup);
+  box-shadow: 0 4px 10px rgb(0 0 0 / 10%);
+  overflow: hidden;
+}
+.dekopon-item{
+  display:flex;
+  justify-content: space-between;
+}

@@ -7,3 +7,5 @@ import '../space/style';
 import '../modal/style';
 import '../comment/style';
 import '../card/style';
+import '../input/style';
+import '../select/style';
