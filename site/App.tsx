@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { createElement } from "react";
 import CommonLayout from "./components/CommonLayout";
 import useMenu from "./components/useMenu";
-import IconDemo from '../icon/demo';
+import IconDemo from './components/demo';
 import React from 'react';
 function App(): JSX.Element {
   const list = useMenu();

@@ -1,10 +1,10 @@
-import React from 'react';
-import type { ReactNode } from 'react';
-import Portal from '../common/Portal';
-import { Button } from '../button';
-import useOutsideClick from '../_hooks/useOutsideClick';
-import classNames from '../_util/classNames';
-import IconClose from '../../icon/react-icon/IconClose';
+import React from "react";
+import type { ReactNode } from "react";
+import Portal from "../common/Portal";
+import { Button } from "../button";
+import useOutsideClick from "../_hooks/useOutsideClick";
+import classNames from "../_util/classNames";
+import { IconClose } from "@dekopon/icon";
 
 type ModalType = {
   title?: string;
@@ -14,21 +14,31 @@ type ModalType = {
   onCancel: () => void;
 };
 const Modal = (props: ModalType) => {
-  const { title, children, visible, onConfirm = () => {}, onCancel = () => {} } = props;
+  const {
+    title,
+    children,
+    visible,
+    onConfirm = () => {},
+    onCancel = () => {},
+  } = props;
   const ref = useOutsideClick<HTMLDivElement>(onCancel);
 
   return (
-    <Portal id='modal'>
-      <div className={classNames('zzf-modal-mask', visible && 'zzf-modal-show')}>
-        <div ref={ref} className={'zzf-modal-container'}>
-          <header className={'zzf-modal-header'}>
+    <Portal id="modal">
+      <div
+        className={classNames("zzf-modal-mask", visible && "zzf-modal-show")}
+      >
+        <div ref={ref} className={"zzf-modal-container"}>
+          <header className={"zzf-modal-header"}>
             <div>{title}</div>
-            <IconClose className={'zzf-model-close'} onClick={onCancel} />
+            <IconClose className={"zzf-model-close"} onClick={onCancel} />
           </header>
           <div>{children}</div>
-          <footer className={'zzf-modal-footer'}>
+          <footer className={"zzf-modal-footer"}>
             <Button onClick={onCancel}>取消</Button>
-            <Button type='primary' onClick={onConfirm}>确定</Button>
+            <Button type="primary" onClick={onConfirm}>
+              确定
+            </Button>
           </footer>
         </div>
       </div>
