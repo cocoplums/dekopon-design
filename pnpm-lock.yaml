@@ -15,7 +15,7 @@ specifiers:
   '@babel/runtime': ^7.18.9
   '@babel/runtime-corejs3': ^7.18.9
   '@dekopon/cli': ^0.0.1
-  '@dekopon/icon': ^1.0.4
+  '@dekopon/icon': ^1.0.6
   '@types/jest': ^28.1.6
   '@types/node': ^18.6.4
   '@types/react': ^18.0.15
@@ -80,7 +80,7 @@ devDependencies:
   '@babel/runtime': 7.18.9
   '@babel/runtime-corejs3': 7.18.9
   '@dekopon/cli': 0.0.1
-  '@dekopon/icon': 1.0.4
+  '@dekopon/icon': 1.0.6
   '@types/jest': 28.1.6
   '@types/node': 18.6.4
   '@types/react': 18.0.15
@@ -1637,8 +1637,8 @@ packages:
       - supports-color
     dev: true
 
-  /@dekopon/icon/1.0.4:
-    resolution: {integrity: sha512-zdJAGb3ZIeOMeGGoMjSsnNaEVkIMpEGy/T0IjNwsWecD6bqRZ8nq8M/gsV1HpabyxT2pL9HCoP9TEelARBWtvg==}
+  /@dekopon/icon/1.0.6:
+    resolution: {integrity: sha512-D6EnKI1W+FNDT7K5mFSIefahFGDDFjJ4viP1mXWlzasxxBr980+jiMpnfC+ntOMfhDMO+2hPb79uq8VimPcbXA==}
     dev: true
 
   /@discoveryjs/json-ext/0.5.7:

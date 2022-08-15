@@ -1,6 +1,6 @@
 @import "reset.css";
 @import "../../components/styles/theme";
-
+@import "./highlight";
 :root,
 [data-color-mode="light"] {
   @include colors-light;
@@ -270,109 +270,9 @@ h2 {
     line-height: 45px;
   }
 }
-.codebox-wrapper .arco-code-wrapper-css pre.code_block>code, .codebox-wrapper .arco-code-wrapper pre.code_block>code {
-  font-size: 13px;
-  padding: 0;
-  width: 100%;
-  overflow-x: auto;
-  display: block;
-}
-.ac-toolbar {
-  position: absolute;
-  top: 120px;
-  right: 56px;
-}
-.token.comment,
-.token.block-comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: var(--color-text-2);
-}
 
-.token.punctuation {
-  color: rgb(var(--arcoblue-6));
-}
 
-.token.property,
-.token.tag,
-.token.function-name,
-.token.constant,
-.token.symbol,
-.token.deleted {
-  color: rgb(var(--arcoblue-6));
-}
 
-.token.boolean,
-.token.number,
-.token.string,
-.token.char,
-.token.selector,
-.token.attr-name,
-.token.function,
-.token.builtin,
-.token.inserted {
-  color: rgb(var(--purple-6));
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.token.variable {
-  color: rgb(var(--gold-6));
-}
-
-.token.atrule,
-.token.attr-value,
-.token.class-name,
-.token.keyword {
-  color: rgb(var(--green-6));
-}
-
-.token.regex,
-.token.important {
-  color: rgb(var(--orange-6));
-}
-
-.language-css .token.string,
-.style .token.string {
-  color: rgb(var(--gold-6));
-}
-
-.token.important {
-  font-weight: normal;
-}
-
-.token.bold {
-  font-weight: bold;
-}
-
-.token.italic {
-  font-style: italic;
-}
-
-.token.entity {
-  cursor: help;
-}
-
-.namespace {
-  opacity: 0.7;
-}
-
-@media screen and (max-width: 767px) {
-  pre[class*='language-']::before,
-  pre[class*='language-']::after {
-    bottom: 14px;
-    box-shadow: none;
-  }
-}
-
-/* Plugin styles */
-.token.tab:not(:empty)::before,
-.token.cr::before,
-.token.lf::before {
-  color: #e0d7d1;
-}
 .iconlist{
   width: 100%;
   margin: 0;
@@ -414,4 +314,18 @@ h2 {
       text-overflow: ellipsis;
     }
   }
+}
+.ac-toolbar {
+  position: absolute;
+  top: 120px;
+  right: 56px;
+
+  .changelog-btn {
+    margin-left: 10px;
+  }
+}
+
+.ac-usage {
+  width: 880px;
+  padding-top: 48px;
 }

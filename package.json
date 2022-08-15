@@ -50,7 +50,7 @@
     "@babel/runtime": "^7.18.9",
     "@babel/runtime-corejs3": "^7.18.9",
     "@dekopon/cli": "^0.0.1",
-    "@dekopon/icon": "^1.0.4",
+    "@dekopon/icon": "^1.0.6",
     "@types/jest": "^28.1.6",
     "@types/node": "^18.6.4",
     "@types/react": "^18.0.15",

@@ -1,8 +1,7 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import { useState } from 'react';
 import useMenu from './useMenu';
-import Moon from './Moon';
-import Sun from './Sun';
+import {IconMoon,IconSunFill} from '@dekopon/icon'
 // @ts-ignore
 import styles from './layout.module.scss';
 import { Layout } from '@dekopon/design';
@@ -21,8 +20,8 @@ const CommonLayout = () => {
       <Layout.Header>
         <header className={styles.webHeader}>
           组件库文档
-          {theme === 'dark' && <Moon className={'icon'} onClick={() => setThemeAction('light')} />}
-          {theme === 'light' && <Sun className={'icon'} onClick={() => setThemeAction('dark')} />}
+          {theme === 'dark' && <IconMoon className={'icon'} onClick={() => setThemeAction('light')} />}
+          {theme === 'light' && <IconSunFill className={'icon'} onClick={() => setThemeAction('dark')} />}
         </header>
       </Layout.Header>
       <Layout.Content className={styles.webContent}>
