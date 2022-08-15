@@ -3,6 +3,7 @@ import { useState } from 'react';
 import useMenu from './useMenu';
 import Moon from './Moon';
 import Sun from './Sun';
+// @ts-ignore
 import styles from './layout.module.scss';
 import { Layout } from '@dekopon/design';
 import React from 'react';

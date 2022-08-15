@@ -13,12 +13,9 @@
     "noImplicitAny": true,
     "strictNullChecks": true,
     "moduleResolution": "node",
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
-      "@dekopon/site": ["site/components/*"],
       "@dekopon/design": ["components/index.ts"],
-      "@dekopon/design/icon": ["icon/index.es.js"],
-      "components": ["components/*"]
     },
     "typeRoots": ["./node_modules/@types/", "./typings"],
     "types": ["node", "webpack-env","jest"],
@@ -28,7 +25,7 @@
     "forceConsistentCasingInFileNames": true,
     "lib": ["dom", "dom.iterable", "esnext"]
   },
-  "include": ["components/**/*","site/**/*","typings"],
+  "include": ["components/**/*","typings"],
   "exclude": [
     "test",
     "node_modules",
