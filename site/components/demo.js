@@ -25,8 +25,6 @@ const locale = {
     fill: '面性图标',
     color: '多色图标',
     search: '搜索图标，点击可复制图标用法',
-    'stroke-width': '线宽：',
-    size: '图标大小：',
     lineJoin: '拐角：',
     lineCap: '端点：',
     desc1: '全局配置（将以下的类添加到 css 中）:',
@@ -77,7 +75,7 @@ export default function ({ lang = 'zh-CN' }) {
       <Affix offsetTop={60} className="iconlist-affix">
         <Space className="iconlist-operations" style={spaceStyle}>
           <Space>
-            {t['stroke-width']}
+            线宽：
             <Slider
               defaultValue={4}
               style={sliderStyle}
@@ -86,7 +84,7 @@ export default function ({ lang = 'zh-CN' }) {
               max={5}
               onChange={(value) => setStrokeWidth(value)}
             />
-            {t.size}
+            图标大小：
             <InputNumber
               min={14}
               max={80}

@@ -39,7 +39,8 @@ specifiers:
   postcss: ^8.4.16
   postcss-loader: ^7.0.1
   postcss-preset-env: ^7.7.2
-  rc-notification: 5.0.0-alpha.9
+  rc-checkbox: ^2.3.2
+  rc-notification: ^4.6.0
   rc-select: ^14.1.9
   rc-tooltip: ^5.2.2
   react: ^18.2.0
@@ -62,7 +63,8 @@ specifiers:
   zx: ^7.0.8
 
 dependencies:
-  rc-notification: 5.0.0-alpha.9_biqbaboplfbrettd7655fr4n2y
+  rc-checkbox: 2.3.2_biqbaboplfbrettd7655fr4n2y
+  rc-notification: 4.6.0_biqbaboplfbrettd7655fr4n2y
   rc-select: 14.1.9_biqbaboplfbrettd7655fr4n2y
   rc-tooltip: 5.2.2_biqbaboplfbrettd7655fr4n2y
   react-toastify: 9.0.8_biqbaboplfbrettd7655fr4n2y
@@ -9298,6 +9300,18 @@ packages:
       resize-observer-polyfill: 1.5.1
     dev: false
 
+  /rc-checkbox/2.3.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-afVi1FYiGv1U0JlpNH/UaEXdh6WUJjcWokj/nUN2TgG80bfG+MDdbfHKlLcNNba94mbjy2/SXJ1HDgrOkXGAjg==}
+    peerDependencies:
+      react: '>=16.9.0'
+      react-dom: '>=16.9.0'
+    dependencies:
+      '@babel/runtime': 7.18.9
+      classnames: 2.3.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
   /rc-motion/2.6.2_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-4w1FaX3dtV749P8GwfS4fYnFG4Rb9pxvCYPc/b2fw1cmlHJWNNgOFIz7ysiD+eOrzJSvnLJWlNQQncpNMXwwpg==}
     peerDependencies:
@@ -9311,8 +9325,8 @@ packages:
       react-dom: 18.2.0_react@18.2.0
     dev: false
 
-  /rc-notification/5.0.0-alpha.9_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-QPvq8VHe2M0SE5DHJf7ADWlvfWKnTsj5FVxcu39gdjX98kKmi+BHY1eTPAQkkdGqd6ZXv6xXHl8qKHyWhQcFPA==}
+  /rc-notification/4.6.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-xF3MKgIoynzjQAO4lqsoraiFo3UXNYlBfpHs0VWvwF+4pimen9/H1DYLN2mfRWhHovW6gRpla73m2nmyIqAMZQ==}
     engines: {node: '>=8.x'}
     peerDependencies:
       react: '>=16.9.0'

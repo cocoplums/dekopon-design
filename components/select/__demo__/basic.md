@@ -14,13 +14,22 @@ title:
 Warning prompts. Suitable for displaying short warning prompts in a way that attracts attention.
 
 ```js
-import { Select } from '@dekopon/design';
-const {Option}=Select
+import { Select } from "@dekopon/design";
+// import { useState } from "react";
+const { Option } = Select;
 const App = () => {
-  return <Select content="This is tooltip content">
-    <Option>123</Option>
-  </Select>
-}
+  const [value, setValue] = React.useState();
+  return (
+    <Select
+      value={value}
+      onChange={(e) => setValue(e.target.value)}
+      placeholder={"please select"}
+    >
+      <Option key={111}>111</Option>
+      <Option key={222}>222</Option>
+    </Select>
+  );
+};
 
-export default App
+export default App;
 ```

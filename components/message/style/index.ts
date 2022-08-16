@@ -1,1 +1,1 @@
-import './tooltip.scss';
+import './message.scss';

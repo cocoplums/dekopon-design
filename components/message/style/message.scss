@@ -1,0 +1,44 @@
+.dekopon-notification{
+  position: fixed;
+  z-index: 1000;
+  display: flex;
+  max-height: 100vh;
+  overflow-y: auto;
+  align-items: flex-end;
+  top: 0;
+}
+.dekopon-notification-notice{
+  border:1px solid var(--color-neutral-3);
+  background-color: var(--color-bg-popup);
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.dekopon-fade-enter {
+  animation: moveLeft .3s;
+}
+.dekopon-fade-leave {
+  animation: moveOutLeft .3s;
+}
+.dekopon-fade-enter.dekopon-fade-enter-active {
+  animation: moveLeft .3s;
+}
+.dekopon-fade-leave.dekopon-fade-leave-active {
+  animation: moveOutLeft .3s;
+}
+
+@keyframes moveOutLeft {
+  0% {
+
+  }
+  100% {
+    right: -200%;
+  }
+}
+@keyframes moveLeft {
+  0% {
+    right: -200%;
+  }
+  100% {
+    right: 0;
+  }
+}

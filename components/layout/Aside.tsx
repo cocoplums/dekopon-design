@@ -4,8 +4,8 @@ interface SidebarProps {
   className?: string;
   children: React.ReactNode;
 }
-const Left: React.FC<SidebarProps> = ({ children, className }) => {
+const Aside: React.FC<SidebarProps> = ({ children, className }) => {
   return <aside className={classNames('zzf-layout-slider', className)}>{children}</aside>;
 };
 
-export default Left;
+export default Aside;

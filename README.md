@@ -1,4 +1,4 @@
-<h1 align="center">ZZF Design</h1>
+<h1 align="center">Dekopon Design</h1>
 
 <div align="center">
 
@@ -21,11 +21,7 @@
 ## 📦 安装
 
 ```bash
-npm install @zzf/ui --save
-```
-
-```bash
-yarn add  @zzf/ui
+npm install @dekopon/design --save
 ```
 
 ## 本地调试指南

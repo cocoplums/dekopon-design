@@ -1,11 +1,11 @@
 import React from "react";
 import RcSelect, { Option } from "rc-select";
 
-const Select = ({children}:{children:React.ReactNode}) => {
+const Select = (props: { children: React.ReactNode }) => {
+  const { children, ...rest } = props;
   return (
-    <RcSelect prefixCls='dekopon'>
-      <Option key={11}>11</Option>
-      <Option key={22}>22</Option>
+    <RcSelect {...rest} prefixCls="dekopon">
+      {children}
     </RcSelect>
   );
 };

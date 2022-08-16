@@ -14,12 +14,19 @@ title:
 Warning prompts. Suitable for displaying short warning prompts in a way that attracts attention.
 
 ```js
-import { Tooltip } from '@dekopon/design';
+import { Radio } from '@dekopon/design';
 
 const App = () => {
-  return <Tooltip content="This is tooltip content">
-    <span>Mouse over to display tooltip</span>
-  </Tooltip>
+  return (
+      <>
+        <Radio>
+          1
+        </Radio>
+        <Radio>
+          2
+        </Radio>
+      </>
+  )
 }
 
 export default App

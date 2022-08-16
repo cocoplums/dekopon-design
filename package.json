@@ -10,6 +10,7 @@
     "lib"
   ],
   "scripts": {
+    "cache-clean": "rm -fr node_modules",
     "clean": "zx bin/clean.mjs",
     "lint": "exit 0",
     "doc:dev": "cross-env NODE_ENV=development webpack server --config build/webpack.dev.js",
@@ -93,7 +94,8 @@
     "zx": "^7.0.8"
   },
   "dependencies": {
-    "rc-notification": "5.0.0-alpha.9",
+    "rc-checkbox": "^2.3.2",
+    "rc-notification": "^4.6.0",
     "rc-select": "^14.1.9",
     "rc-tooltip": "^5.2.2",
     "react-toastify": "^9.0.8"

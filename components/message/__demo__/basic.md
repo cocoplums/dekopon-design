@@ -18,7 +18,7 @@ import { Message,Button,Space } from '@dekopon/design';
 
 const App = () => {
   return <Space>
-  <Button onClick={()=>Message.success("success")}>success</Button>
+  <Button onClick={()=>Message.success("success",2)}>success</Button>
   <Button onClick={()=>Message.info("info")}>info</Button>
   </Space>
 }
