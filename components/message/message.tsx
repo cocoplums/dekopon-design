@@ -6,7 +6,9 @@ import {
   IconCloseCircleFill,
   IconExclamationCircleFill,
   IconLoading,
+  IconClose
 } from "@dekopon/icon";
+
 import React from "react";
 
 let messageInstance: RCNotificationInstance | null;
@@ -41,10 +43,19 @@ function notice(args: any): any {
   const target = args.key;
   const { content, duration, type } = args;
   const closePromise = new Promise((resolve) => {
+    const callback = () => {
+      if (typeof args.onClose === 'function') {
+        args.onClose();
+      }
+      return resolve(true);
+    };
     getRCNotificationInstance(args, ({ instance }) => {
       instance.notice({
         key:Date.now(),
         duration: 3,
+        closable:true,
+        closeIcon:<IconClose/>,
+        onClose:callback,
         content: (
           <div>
             {React.createElement(typeToIcon[type as NoticeType])}
