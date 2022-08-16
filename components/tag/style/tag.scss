@@ -1,0 +1,35 @@
+.zzf-tag {
+  display: inline-flex;
+  height: 24px;
+  line-height: 22px;
+  padding: 0 8px;
+  border-radius: var(--border-radius-small);
+  color: var(--color-text-1);
+  font-size: 12px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  font-weight: 500;
+  vertical-align: middle;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background-color: var(--color-fill-2);
+
+  &-light {
+    background-color: rgba(var(--brand-5), 0.15);
+    color: rgba(var(--brand-8), 1);
+  }
+  &-ghost {
+    background-color: transparent;
+    border: 1px solid rgba(var(--brand-4), 1);
+    color: rgba(var(--brand-5), 1);
+    box-sizing: content-box;
+  }
+  &-solid {
+    background-color: rgba(var(--brand-5), 1);
+    border: 1px solid rgba(var(--brand-4), 1);
+    color: rgba(var(--white), 1);
+    box-sizing: content-box;
+  }
+}

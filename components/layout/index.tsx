@@ -11,7 +11,7 @@ interface LayoutType extends React.FC<BasicProps> {
   Header: typeof Header;
   Footer: typeof Footer;
   Content: typeof Content;
-  Left: typeof Aside;
+  Aside: typeof Aside;
   Center: typeof Center;
 }
 
@@ -20,7 +20,7 @@ const Layout = Basic as LayoutType;
 Layout.Header = Header;
 Layout.Footer = Footer;
 Layout.Content = Content;
-Layout.Left = Aside;
+Layout.Aside = Aside;
 Layout.Center = Center;
 
 export { Layout };
