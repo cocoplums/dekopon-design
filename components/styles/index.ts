@@ -14,3 +14,4 @@ import '../message/style';
 import '../tag/style';
 import '../SvgIcon/style';
 import '../loading/style';
+import '../progress/style';
