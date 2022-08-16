@@ -25,7 +25,7 @@ const CommonLayout = () => {
         </header>
       </Layout.Header>
       <Layout.Content className={styles.webContent}>
-        <Layout.Left className={styles.aside}>
+        <Layout.Aside className={styles.aside}>
           <ul>
               <li>
                   <NavLink
@@ -47,7 +47,7 @@ const CommonLayout = () => {
               </li>
             ))}
           </ul>
-        </Layout.Left>
+        </Layout.Aside>
         <Layout.Center className={styles.center}>
           <Outlet />
         </Layout.Center>
