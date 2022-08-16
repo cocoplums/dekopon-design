@@ -11,3 +11,4 @@ import '../input/style';
 import '../select/style';
 import '../radio/style';
 import '../message/style';
+import '../tag/style';

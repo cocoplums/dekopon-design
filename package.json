@@ -1,10 +1,10 @@
 {
   "name": "@dekopon/design",
-  "version": "0.1.4",
+  "version": "0.1.7",
   "description": "不知火组件库",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
-  "typings": "lib/components/index.d.ts",
+  "typings": "lib/index.d.ts",
   "files": [
     "dist",
     "lib"
@@ -17,7 +17,8 @@
     "doc:build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.js",
     "build": "cross-env NODE_ENV=production node build/esbuild&&tsc",
     "minor": "standard-version --release-as minor",
-    "patch": "standard-version"
+    "patch": "standard-version",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
