@@ -1,6 +1,6 @@
-import React, { ReactNode } from 'react';
-import {Button} from "../button";
-
+import React, { ReactNode } from "react";
+import { Button } from "../button";
+import { IconMessage } from "@dekopon/icon";
 interface CommentProps {
   author?: string;
   avatar?: string;
@@ -11,20 +11,18 @@ interface CommentProps {
 const Comment = (props: CommentProps) => {
   const { author, avatar, content, datetime, children } = props;
   return (
-    <div className={'zzf-comment'}>
-      <div className='zzf-comment-avatar'>
-        {avatar}
-      </div>
-      <div className='zzf-comment-content-container'>
-        <header className='zzf-comment-header'>
+    <div className={"zzf-comment"}>
+      {avatar && <img className="zzf-comment-avatar" src={avatar} alt="" />}
+      <div className="zzf-comment-content-container">
+        <header className="zzf-comment-header">
           <span>{author}</span>
           <span>{datetime}</span>
         </header>
-        <p className={'zzf-comment-content'}>{content}</p>
-        <div className={'zzf-comment-actions'}>
-          <Button type='text' size='mini'>replay</Button>
+        <p className={"zzf-comment-content"}>{content}</p>
+        <div className={"zzf-comment-actions"}>
+          <IconMessage /> Replay
         </div>
-        <div className={'zzf-comment-replay'}>{children}</div>
+        <div className={"zzf-comment-replay"}>{children}</div>
       </div>
     </div>
   );

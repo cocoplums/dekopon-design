@@ -15,7 +15,7 @@ specifiers:
   '@babel/runtime': ^7.18.9
   '@babel/runtime-corejs3': ^7.18.9
   '@dekopon/cli': ^0.0.2
-  '@dekopon/icon': ^1.0.6
+  '@dekopon/icon': ^1.0.12
   '@types/jest': ^28.1.6
   '@types/node': ^18.6.4
   '@types/react': ^18.0.15
@@ -47,7 +47,6 @@ specifiers:
   react-dom: ^18.2.0
   react-router-dom: ^6.3.0
   react-test-renderer: ^18.2.0
-  react-toastify: ^9.0.8
   rimraf: ^3.0.2
   sass: ^1.54.3
   sass-loader: ^13.0.2
@@ -63,11 +62,11 @@ specifiers:
   zx: ^7.0.8
 
 dependencies:
+  '@dekopon/icon': 1.0.12
   rc-checkbox: 2.3.2_biqbaboplfbrettd7655fr4n2y
   rc-notification: 4.6.0_biqbaboplfbrettd7655fr4n2y
   rc-select: 14.1.9_biqbaboplfbrettd7655fr4n2y
   rc-tooltip: 5.2.2_biqbaboplfbrettd7655fr4n2y
-  react-toastify: 9.0.8_biqbaboplfbrettd7655fr4n2y
 
 devDependencies:
   '@arco-design/web-react': 2.38.1_bb2bxwco6ptpubzwpazr52qf6i
@@ -84,7 +83,6 @@ devDependencies:
   '@babel/runtime': 7.18.9
   '@babel/runtime-corejs3': 7.18.9
   '@dekopon/cli': 0.0.2
-  '@dekopon/icon': 1.0.6
   '@types/jest': 28.1.6
   '@types/node': 18.6.4
   '@types/react': 18.0.15
@@ -1642,9 +1640,9 @@ packages:
       - supports-color
     dev: true
 
-  /@dekopon/icon/1.0.6:
-    resolution: {integrity: sha512-D6EnKI1W+FNDT7K5mFSIefahFGDDFjJ4viP1mXWlzasxxBr980+jiMpnfC+ntOMfhDMO+2hPb79uq8VimPcbXA==}
-    dev: true
+  /@dekopon/icon/1.0.12:
+    resolution: {integrity: sha512-KkJADNUyT7xGRsBxRVK8ch2TonBuYdSElePsMmqOO81u1JgKwQK6X3YoU+KjFXNEkhjLu0BJh27Fo/pxluvnKw==}
+    dev: false
 
   /@discoveryjs/json-ext/0.5.7:
     resolution: {integrity: sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==}
@@ -3424,11 +3422,6 @@ packages:
     resolution: {integrity: sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==}
     engines: {node: '>=0.8'}
     dev: true
-
-  /clsx/1.2.1:
-    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
-    engines: {node: '>=6'}
-    dev: false
 
   /co/4.6.0:
     resolution: {integrity: sha512-QVb0dM5HvG+uaxitm8wONl7jltx8dqhfU33DcqtOZcLSVIKSDDLDi7+0LbAKiyI8hD9u42m2YxXSkMGWThaecQ==}
@@ -5702,7 +5695,7 @@ packages:
       source-map: 0.6.1
       wordwrap: 1.0.0
     optionalDependencies:
-      uglify-js: 3.16.3
+      uglify-js: 3.17.0
     dev: true
 
   /hard-rejection/2.1.0:
@@ -9546,17 +9539,6 @@ packages:
       scheduler: 0.23.0
     dev: true
 
-  /react-toastify/9.0.8_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-EwM+teWt49HSHx+67qI08yLAW1zAsBxCXLCsUfxHYv1W7/R3ZLhrqKalh7j+kjgPna1h5LQMSMwns4tB4ww2yQ==}
-    peerDependencies:
-      react: '>=16'
-      react-dom: '>=16'
-    dependencies:
-      clsx: 1.2.1
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-    dev: false
-
   /react-transition-group/4.4.5_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==}
     peerDependencies:
@@ -11020,8 +11002,8 @@ packages:
       yargs: 3.10.0
     dev: true
 
-  /uglify-js/3.16.3:
-    resolution: {integrity: sha512-uVbFqx9vvLhQg0iBaau9Z75AxWJ8tqM9AV890dIZCLApF4rTcyHwmAvLeEdYRs+BzYWu8Iw81F79ah0EfTXbaw==}
+  /uglify-js/3.17.0:
+    resolution: {integrity: sha512-aTeNPVmgIMPpm1cxXr2Q/nEbvkmV8yq66F3om7X3P/cvOXQ0TMQ64Wk63iyT1gPlmdmGzjGpyLh1f3y8MZWXGg==}
     engines: {node: '>=0.8.0'}
     hasBin: true
     requiresBuild: true

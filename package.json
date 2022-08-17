@@ -1,6 +1,6 @@
 {
   "name": "@dekopon/design",
-  "version": "0.1.11",
+  "version": "0.1.14",
   "description": "不知火组件库",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
@@ -52,7 +52,6 @@
     "@babel/runtime": "^7.18.9",
     "@babel/runtime-corejs3": "^7.18.9",
     "@dekopon/cli": "^0.0.2",
-    "@dekopon/icon": "^1.0.6",
     "@types/jest": "^28.1.6",
     "@types/node": "^18.6.4",
     "@types/react": "^18.0.15",
@@ -95,10 +94,10 @@
     "zx": "^7.0.8"
   },
   "dependencies": {
+    "@dekopon/icon": "^1.0.12",
     "rc-checkbox": "^2.3.2",
     "rc-notification": "^4.6.0",
     "rc-select": "^14.1.9",
-    "rc-tooltip": "^5.2.2",
-    "react-toastify": "^9.0.8"
+    "rc-tooltip": "^5.2.2"
   }
 }

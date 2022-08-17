@@ -9,13 +9,13 @@ title:
 
 一个基本的评论组件，带有作者、头像、时间和操作。
 
-##  en-US
+## en-US
 
 A basic comment component with author, avatar, time and actions.
 
 ```js
-import React from 'react';
-import { Comment } from '@dekopon/design';
+import React from "react";
+import { Comment } from "@dekopon/design";
 
 const App = () => {
   const [like, setLike] = React.useState();
@@ -23,10 +23,17 @@ const App = () => {
   return (
     <Comment
       author="Socrates"
-      avatar={<img src="//p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/e278888093bef8910e829486fb45dd69.png"/>}
+      avatar={'https://source.unsplash.com/1600x900/?nature,water&t=1'}
       content={<div>Comment body content.</div>}
       datetime="1 hour"
-    />
+    >
+      <Comment
+        author="Socrates"
+        avatar={'https://source.unsplash.com/1600x900/?nature,water&t=2'}
+        content={<div>Comment body content.</div>}
+        datetime="1 hour"
+      />
+    </Comment>
   );
 };
 
