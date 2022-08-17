@@ -1,5 +1,4 @@
 import React, { ReactNode } from "react";
-import { Button } from "../button";
 import { IconMessage } from "@dekopon/icon";
 interface CommentProps {
   author?: string;
@@ -7,9 +6,10 @@ interface CommentProps {
   content?: string;
   datetime?: string;
   children?: ReactNode;
+  onReply?: () => void;
 }
 const Comment = (props: CommentProps) => {
-  const { author, avatar, content, datetime, children } = props;
+  const { author, avatar, content, datetime, children, onReply } = props;
   return (
     <div className={"zzf-comment"}>
       {avatar && <img className="zzf-comment-avatar" src={avatar} alt="" />}
@@ -19,7 +19,7 @@ const Comment = (props: CommentProps) => {
           <span>{datetime}</span>
         </header>
         <p className={"zzf-comment-content"}>{content}</p>
-        <div className={"zzf-comment-actions"}>
+        <div onClick={onReply} className={"zzf-comment-actions"}>
           <IconMessage /> Replay
         </div>
         <div className={"zzf-comment-replay"}>{children}</div>
