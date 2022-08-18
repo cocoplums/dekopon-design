@@ -43,6 +43,7 @@ specifiers:
   rc-notification: ^4.6.0
   rc-select: ^14.1.9
   rc-tooltip: ^5.2.2
+  rc-trigger: ^5.3.1
   react: ^18.2.0
   react-dom: ^18.2.0
   react-router-dom: ^6.3.0
@@ -67,6 +68,7 @@ dependencies:
   rc-notification: 4.6.0_biqbaboplfbrettd7655fr4n2y
   rc-select: 14.1.9_biqbaboplfbrettd7655fr4n2y
   rc-tooltip: 5.2.2_biqbaboplfbrettd7655fr4n2y
+  rc-trigger: 5.3.1_biqbaboplfbrettd7655fr4n2y
 
 devDependencies:
   '@arco-design/web-react': 2.38.1_bb2bxwco6ptpubzwpazr52qf6i

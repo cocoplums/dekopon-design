@@ -27,8 +27,10 @@
   padding-top: 20px;
   flex-grow: 1;
   display: grid;
-  grid-template-columns: 12fr 25fr;
-  column-gap: 22.5px;
+  @media (min-width: 768px) {
+    grid-template-columns: 12fr 25fr;
+    column-gap: 22.5px;
+  }
   min-height: calc(100vh - 60px - 100px);
 }
 
@@ -56,4 +58,7 @@
 .zzf-layout-slider {
   position: sticky;
   top: 80px;
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
