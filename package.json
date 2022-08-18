@@ -1,6 +1,6 @@
 {
   "name": "@dekopon/design",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "description": "不知火组件库",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
@@ -98,7 +98,6 @@
     "rc-checkbox": "^2.3.2",
     "rc-notification": "^4.6.0",
     "rc-select": "^14.1.9",
-    "rc-tooltip": "^5.2.2",
-    "rc-trigger": "^5.3.1"
+    "rc-tooltip": "^5.2.2"
   }
 }

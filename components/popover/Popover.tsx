@@ -3,7 +3,7 @@ import RcTooltip from "rc-tooltip";
 type PopoverProps = {
   content: React.ReactNode;
   children: JSX.Element;
-  placement:
+  placement?:
     | "left"
     | "right"
     | "top"
@@ -12,7 +12,7 @@ type PopoverProps = {
     | "topRight"
     | "bottomLeft"
     | "bottomRight";
-  onPopupVisibleChange: (visible: boolean) => void;
+  onPopupVisibleChange?: (visible: boolean) => void;
 };
 
 const Popover = ({
