@@ -5,14 +5,30 @@
   font-size:14px;
   &-info {
     background-color: var(--color-primary-1);
+    &-icon{
+      color: rgb(var(--primary-6));
+    }
   }
   &-success {
     background-color: var(--color-success-1);
+    &-icon{
+      color: rgb(var(--success-6));
+    }
   }
   &-warning {
     background-color: var(--color-warning-1);
+    &-icon{
+      color: rgb(var(--warning-6));
+    }
   }
   &-error {
     background-color: var(--color-danger-1);
+    &-icon{
+      color: rgb(var(--danger-6));
+    }
+  }
+  &-icon{
+    margin-right: 8px;
+    color:var(--color-danger-1)
   }
 }

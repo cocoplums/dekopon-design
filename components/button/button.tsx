@@ -9,18 +9,26 @@ interface ButtonProps {
   onClick?: (event: React.MouseEvent) => void;
 }
 
-const Button = ({
-  children,
-  type = 'secondary',
-  size = 'default',
-  className,
-  onClick,
-}: ButtonProps,ref: React.LegacyRef<HTMLButtonElement> | undefined) => {
+const Button = (
+  {
+    children,
+    type = "secondary",
+    size = "default",
+    className,
+    onClick,
+  }: ButtonProps,
+  ref: React.LegacyRef<HTMLButtonElement> | undefined
+) => {
   return (
     <button
-        ref={ref}
+      ref={ref}
       onClick={onClick}
-      className={classNames('zzf-btn', `zzf-btn-type-${type}`, `zzf-btn-size-${size}`, className)}
+      className={classNames(
+        "zzf-btn",
+        `zzf-btn-type-${type}`,
+        `zzf-btn-size-${size}`,
+        className
+      )}
     >
       {children}
     </button>

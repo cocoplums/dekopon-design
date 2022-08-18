@@ -5,10 +5,9 @@
 .dekopon-notification-notice {
   padding: 7px 20px 7px 10px;
   border-radius: 3px 3px;
-  border: 1px solid #999;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  border: 0px solid rgba(0, 0, 0, 0);
-  background: #fff;
+  border: 0 solid var(--color-neutral-3);
+  background: var(--color-bg-popup);
   display: block;
   width: auto;
   line-height: 1.5;
@@ -22,7 +21,7 @@
   position: absolute;
   right: 5px;
   top: 3px;
-  color: #000;
+  color: var(--color-text-1);
   cursor: pointer;
   outline: none;
   font-size: 16px;
@@ -34,7 +33,7 @@
   text-decoration: none;
 }
 .dekopon-notification-notice-close-x:after {
-  content: '×';
+  content: "×";
 }
 .dekopon-notification-notice-close:hover {
   opacity: 1;
