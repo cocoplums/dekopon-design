@@ -20,7 +20,6 @@ function App() {
   const [visible, setVisible] = React.useState(false);
   return (
     <Popover
-            align='bottomRight'
       content={
         <span>
           <p>Here is the text content</p>
@@ -28,7 +27,7 @@ function App() {
         </span>
       }
     >
-      <Button type="primary">Hover</Button>
+      <Button type="primary">Click</Button>
     </Popover>
   );
 }

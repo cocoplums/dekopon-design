@@ -1,59 +1,36 @@
 import React from "react";
-import Trigger from "rc-trigger";
+import RcTooltip from "rc-tooltip";
 type PopoverProps = {
   content: React.ReactNode;
   children: JSX.Element;
-  align: string;
-  onPopupVisibleChange: (visible:boolean) => void;
+  placement:
+    | "left"
+    | "right"
+    | "top"
+    | "bottom"
+    | "topLeft"
+    | "topRight"
+    | "bottomLeft"
+    | "bottomRight";
+  onPopupVisibleChange: (visible: boolean) => void;
 };
-const builtinPlacements = {
-  left: {
-    points: ["cr", "cl"],
-  },
-  right: {
-    points: ["cl", "cr"],
-  },
-  top: {
-    points: ["bc", "tc"],
-  },
-  bottom: {
-    points: ["tc", "bc"],
-  },
-  topLeft: {
-    points: ["bl", "tl"],
-  },
-  topRight: {
-    points: ["br", "tr"],
-  },
-  bottomRight: {
-    points: ["tr", "br"],
-  },
-  bottomLeft: {
-    points: ["tl", "bl"],
-  },
-};
-function getAlign(state: string) {
-  if (Object.keys(builtinPlacements).includes(state)) {
-    return Reflect.get(builtinPlacements, state);
-  } else {
-    return {};
-  }
-}
+
 const Popover = ({
   content,
   children,
-  align,
+  placement = "bottom",
   onPopupVisibleChange,
 }: PopoverProps) => {
   return (
-    <Trigger
-      onPopupVisibleChange={onPopupVisibleChange}
-      action={["click"]}
-      popup={content}
-      popupAlign={getAlign(align)}
+    <RcTooltip
+      prefixCls={"dekopon-popover"}
+      onVisibleChange={onPopupVisibleChange}
+      trigger={["click"]}
+      placement={placement}
+      overlay={content}
     >
       {children}
-    </Trigger>
+    </RcTooltip>
   );
 };
 

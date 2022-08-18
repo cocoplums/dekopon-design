@@ -9,7 +9,7 @@ interface TooltipProps {
 
 const Tooltip = ({ content,children,position='top',id}:TooltipProps) => {
   return (
-    <RcTooltip id={id} prefixCls={'dekopon'} placement={position} trigger={['hover']} overlay={content}>
+    <RcTooltip id={id} prefixCls={'dekopon-tooltip'} placement={position} trigger={['hover']} overlay={content}>
       {children}
     </RcTooltip>
   );

@@ -18,9 +18,9 @@ const Comment = (props: CommentProps) => {
           <span>{author}</span>
           <span>{datetime}</span>
         </header>
-        <p className={"zzf-comment-content"}>{content}</p>
+        <div className={"zzf-comment-content"}>{content}</div>
         <div onClick={onReply} className={"zzf-comment-actions"}>
-          <IconMessage /> Replay
+          <IconMessage /> Reply
         </div>
         <div className={"zzf-comment-replay"}>{children}</div>
       </div>
