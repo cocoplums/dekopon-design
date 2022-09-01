@@ -4,7 +4,7 @@ name: ci/cd
 volumes:
   - name: node_modules
     host:
-      path: /root/$DRONE_REPO_NAME/node_modules
+      path: /root/$${DRONE_REPO_NAME}/node_modules
   - name: ssh_keys
     host:
       path: /root/.ssh
