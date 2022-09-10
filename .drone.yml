@@ -24,8 +24,10 @@ steps:
       - name: ssh_keys
         path: /root/.ssh
     commands:
-      - git clone $DRONE_GIT_SSH_URL .
-      - git checkout $DRONE_COMMIT
+      - git init
+      - git remote add origin $DRONE_GIT_SSH_URL
+      - git fetch --no-tags --prune --progress --no-recurse-submodules --depth=1
+      - git checkout origin/$DRONE_COMMIT_BRANCH -ft
   - name: build
     image: node:lts-alpine
     depends_on:

@@ -30,6 +30,12 @@
   @media (min-width: 768px) {
     grid-template-columns: 12fr 25fr;
     column-gap: 22.5px;
+    padding: 0 22.5px;
+  }
+  @media (min-width: 1280px) {
+    grid-template-columns: 23fr 54fr 23fr;
+    column-gap: 22.5px;
+    max-width: 1184px;
   }
   min-height: calc(100vh - 60px - 100px);
 }
