@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.33](https://github.com/cocoplums/dekopon-design/compare/v0.1.32...v0.1.33) (2022-09-10)
+
+
+### Features
+
+* favicon ([5160de1](https://github.com/cocoplums/dekopon-design/commit/5160de1c777347fb242ce6abb0e7f73ab4bdecfd))
+
 ### [0.1.32](https://github.com/cocoplums/dekopon-design/compare/v0.1.31...v0.1.32) (2022-09-10)
 
 ### [0.1.31](https://github.com/cocoplums/dekopon-design/compare/v0.1.30...v0.1.31) (2022-09-10)
