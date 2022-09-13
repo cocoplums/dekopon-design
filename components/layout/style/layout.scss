@@ -24,15 +24,20 @@
 }
 
 .zzf-layout-content {
-  padding-top: 20px;
   flex-grow: 1;
   display: grid;
-  grid-template-columns: 1fr 3fr;
   column-gap: 22px;
+  padding: 22.5px 11.25px;
   @media (min-width: 768px) {
+    grid-template-columns: 12fr 25fr;
+    padding: 22.5px;
   }
   @media (min-width: 1280px) {
+    grid-template-columns: 23fr 54fr 23fr;
     max-width: 1184px;
+  }
+  @media (min-width: 1536px) {
+    max-width: 1376px;
   }
 }
 
@@ -43,6 +48,7 @@
   color: var(--color-text-info);
   display: flex;
   justify-content: center;
+
   .zzf-layout-footer-content {
     padding: 0 16px;
     margin: auto;
@@ -58,9 +64,4 @@
 }
 
 .zzf-layout-slider {
-  position: sticky;
-  top: 80px;
-  @media (max-width: 768px) {
-    display: none;
-  }
 }
