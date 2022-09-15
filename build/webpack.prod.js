@@ -14,7 +14,7 @@ module.exports = merge(base, {
   mode: "production",
   devtool: 'source-map',
   output: {
-    publicPath: "https://oss-zzf.zzfzzf.com//dekopon/design",
+    publicPath: "https://oss-zzf.zzfzzf.com/design",
   },
   optimization: {
     runtimeChunk: "single",
