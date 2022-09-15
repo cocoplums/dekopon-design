@@ -40,6 +40,21 @@ steps:
       - ls -a
       - npm install
       - npm run doc:build
+  - name: oss
+    image: registry.cn-shanghai.aliyuncs.com/zzf2001/drone-aliyun-oss
+    depends_on:
+      - build
+    settings:
+      endpoint:
+        from_secret: endpoint
+      ACCESS_KEY_ID:
+        from_secret: accessKeyID
+      ACCESS_KEY_SECRET:
+        from_secret: accessKeySecret
+      BUCKET_NAME:
+        from_secret: bucketName
+      target: design
+      source: ./dist
   - name: deploy
     image: appleboy/drone-scp
     depends_on:
