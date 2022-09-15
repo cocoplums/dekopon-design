@@ -29,11 +29,11 @@ npm install @dekopon/design --save
 > install
 
 1. `pnpm link --global`
-2. 目标项目执行`pnpm link @zzf/design --global`
+2. 目标项目执行`pnpm link @dekopon/design --global`
 
 > uninstall
 
-1. 目标项目执行`pnpm unlink @zzf/design`
+1. 目标项目执行`pnpm unlink @dekopon/design`
 2. `pnpm remove @zzf/design --global`
 
 ## 本地实时预览
