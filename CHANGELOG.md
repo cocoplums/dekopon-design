@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.35](https://github.com/cocoplums/dekopon-design/compare/v0.1.3...v0.1.35) (2022-09-16)
+
+
+### Features
+
+* favicon ([a7b5cdb](https://github.com/cocoplums/dekopon-design/commit/a7b5cdbc85f8c8c3959a2240a99fb3b8017327b7))
+* favicon ([5affd15](https://github.com/cocoplums/dekopon-design/commit/5affd1584d2e6821ebbb183c08058716c80f97ba))
+* favicon ([a7456aa](https://github.com/cocoplums/dekopon-design/commit/a7456aac9e4a7d5c8c2ac6794213d11f718f85c9))
+* favicon ([4f5d877](https://github.com/cocoplums/dekopon-design/commit/4f5d877d262ed03faef530c7c402df7f34712b14))
+* favicon ([5160de1](https://github.com/cocoplums/dekopon-design/commit/5160de1c777347fb242ce6abb0e7f73ab4bdecfd))
+* favicon ([98ed739](https://github.com/cocoplums/dekopon-design/commit/98ed739ffd3ff807beba21e6ff5282412c55cdfe))
+* favicon ([c9cdbbd](https://github.com/cocoplums/dekopon-design/commit/c9cdbbd75789be17c274e7266bc090e1227e295b))
+* favicon ([90bd4b2](https://github.com/cocoplums/dekopon-design/commit/90bd4b2b13f80d07dbb011a25302ab18105a20ea))
+* favicon ([72d7fe3](https://github.com/cocoplums/dekopon-design/commit/72d7fe323861c7572eb58db3b859de289579d131))
+* favicon ([eb33826](https://github.com/cocoplums/dekopon-design/commit/eb33826c9054b3a67c26b6b59ac7661ee850fcf9))
+* favicon ([9fbae1c](https://github.com/cocoplums/dekopon-design/commit/9fbae1c66d24b24d7b1e1d3f24efaf0988e38fce))
+* favicon ([0404127](https://github.com/cocoplums/dekopon-design/commit/0404127921a7a2add9032fa0a5d8b9b07a0eeec7))
+* favicon ([8c1df51](https://github.com/cocoplums/dekopon-design/commit/8c1df51abbdc9af72137413e925000346043eb06))
+* favicon ([0898897](https://github.com/cocoplums/dekopon-design/commit/089889713fe3c832ff2e7a48b0da9d7459b88bd6))
+* favicon ([064caef](https://github.com/cocoplums/dekopon-design/commit/064caeff84916bc94df6e0985b626849dad652bc))
+* favicon ([036ce5f](https://github.com/cocoplums/dekopon-design/commit/036ce5f393b77f10b4de27df6fd608426e9d162b))
+* favicon ([0a52381](https://github.com/cocoplums/dekopon-design/commit/0a52381b8016253575580ab32bb1c244c67648e2))
+* favicon ([f3a0a13](https://github.com/cocoplums/dekopon-design/commit/f3a0a1367b7ef657afeec848035ea608205840e2))
+* favicon ([1a4aaf9](https://github.com/cocoplums/dekopon-design/commit/1a4aaf953b9d026cb62cf9e035f772a92ec7b3b2))
+* favicon ([b82d205](https://github.com/cocoplums/dekopon-design/commit/b82d2055c862955e57eabe35d6c2f99727dcadff))
+* favicon ([3ee26b5](https://github.com/cocoplums/dekopon-design/commit/3ee26b5f97ae8c53d482d93ed70f6496ad075713))
+* favicon ([b22b745](https://github.com/cocoplums/dekopon-design/commit/b22b74599befd6a8e89ea0db3a0452efc1652c84))
+* favicon ([a65065e](https://github.com/cocoplums/dekopon-design/commit/a65065ede3bd3f116dd159e01a15513cccd26a96))
+* favicon ([0e9860f](https://github.com/cocoplums/dekopon-design/commit/0e9860ff52265eb5edc11a677dc617d7d677f52a))
+* favicon ([97edd58](https://github.com/cocoplums/dekopon-design/commit/97edd5814539d8df3d3e3bbd34183028fb389e0c))
+* favicon ([bc9d507](https://github.com/cocoplums/dekopon-design/commit/bc9d50762b2013ba138f7e51fc59a7e0afa09843))
+
 ### [0.1.34](https://github.com/cocoplums/dekopon-design/compare/v0.1.33...v0.1.34) (2022-09-13)
 
 
