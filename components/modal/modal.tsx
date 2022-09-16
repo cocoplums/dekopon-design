@@ -10,8 +10,8 @@ type ModalType = {
   title?: string;
   children?: ReactNode;
   visible?: boolean;
-  onConfirm: () => void;
-  onCancel: () => void;
+  onConfirm?: () => void;
+  onCancel?: () => void;
 };
 const Modal = (props: ModalType) => {
   const {
