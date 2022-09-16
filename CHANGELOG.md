@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.36](https://github.com/cocoplums/dekopon-design/compare/v0.1.35...v0.1.36) (2022-09-16)
+
 ### [0.1.35](https://github.com/cocoplums/dekopon-design/compare/v0.1.3...v0.1.35) (2022-09-16)
 
 
