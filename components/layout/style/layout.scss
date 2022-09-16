@@ -20,6 +20,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 11.25px;
+    @media (min-width: 768px) {
+      padding: 0 22.5px;
+    }
   }
 }
 
@@ -34,10 +38,6 @@
   }
   @media (min-width: 1280px) {
     grid-template-columns: 23fr 54fr 23fr;
-    max-width: 1184px;
-  }
-  @media (min-width: 1536px) {
-    max-width: 1376px;
   }
 }
 
